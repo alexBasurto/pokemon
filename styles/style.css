@@ -1,6 +1,11 @@
-/* body {
+* {
+    box-sizing: border-box;
+}
+
+body {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 h1 {
@@ -9,4 +14,9 @@ h1 {
 
 section, ul {
     width: 50%;
+}
+
+/* section#pokemon-show {
+    border-radius: 12%;
+    background-color: aquamarine;
 } */

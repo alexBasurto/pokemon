@@ -38,6 +38,35 @@ async function getSinglePokemonFromApi(url){
         }
         const pokemon = await response.json();
         console.log(pokemon);
+        const tipoPokemon = [];
+        pokemon.types.forEach((pokemontype) => {
+            tipoPokemon.push(pokemontype.type.name);
+        });
+        
+        pokemonShow.innerHTML = ""; //vaciamos section
+
+        //NOMBRE
+        
+        const nameElem = document.createElement('h3'); //creamos <h3></h3>
+        nameElem.innerText = pokemon.name; //creamos el contenido
+        pokemonShow.appendChild(nameElem); //ubicamos todo el elemento en section
+
+        //IMAGEN
+        const imgElem = document.createElement('img');
+        imgElem.src = pokemon.sprites.front_default;
+        pokemonShow.appendChild(imgElem);
+
+        //TIPOS
+        const tipoPokemonStr = tipoPokemon.join(" - ");
+
+        /*
+        pokemonShow.innerHTML = `<h3 class="nombrePokemon">${pokemon.name}</h3>
+        <img class="imgPokemon" src="${pokemon.sprites.front_default}" alt="${pokemon.name} picture 1st gen.">
+        <p class="numPokemon">${pokemon.order}</p>
+        <p class="tipoPokemon">${tipoPokemonStr}</p>
+        <p class="altura">${pokemon.height}</p>
+        <p class="peso">${pokemon.weight}</p>
+        `; */
         return pokemon;
     }
     catch(error){
@@ -45,6 +74,10 @@ async function getSinglePokemonFromApi(url){
         alert("Ha habido un error");
         return null;
     }
+}
+
+async function createPokemonBox(){
+    const pokemon = await getSinglePokemonFromApi();
 }
 
 createPokemonsList();
