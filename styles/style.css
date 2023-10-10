@@ -16,7 +16,13 @@ section, ul {
     width: 50%;
 }
 
-/* section#pokemon-show {
+img, h3, p {
+    margin: 0;
+}
+
+section#pokemon-show {
     border-radius: 12%;
-    background-color: aquamarine;
-} */
+    height: min-content;
+    width: fit-content;
+    text-align: center;
+}
