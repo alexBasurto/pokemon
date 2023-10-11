@@ -91,13 +91,16 @@ async function createPokemonBox(pokemon) {
         water: '#30E1FF',
         ice: '#91FFF7',
         flying: '#FFC8C8',
-        psiquic: '#FF8585',
+        psychic: '#FF8585',
         poison: '#C585FF',
-        earth: '#FF9901',
+        ground: '#FF9901',
         rock: '#BCBCBC',
-        fight: '#DAA000',
+        fighting: '#DAA000',
         bug: '#4E9104',
-        dragon: '#187AFF'
+        dragon: '#187AFF',
+        fairy: '#F818FF',
+        steel: '#cccccc',
+        ghost: '#aaaaaa'
     }
     if (tipoPokemon.length === 1) {
         // Si solo hay un tipo, establece un color sólido
